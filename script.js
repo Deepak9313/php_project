@@ -1,13 +1,8 @@
-console.log("working");
-let modal = document.getElementById("modal");
-let login = document.getElementById("login");
-login.addEventListener("click",function(){
-    modal.style.display = "block";
-})
-window.onclick = function(ev){
-    if(ev.target == modal){
-        modal.style.display = "none";
-    }else{
-        console.log(ev.target);
-    }
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
