@@ -37,7 +37,13 @@ session_start();
           }?>
         </li>
       </ul>
-      <a href="signup.php"><button class="btn btn-primary">Signup</button></a>
+      <?php
+       if(isset($_SESSION["user"])){
+            echo "";
+          }else{
+            echo '<a href="signup.php"><button class="btn btn-primary">Signup</button></a>';
+          }
+          ?>
         <a href="logout.php"><button class="btn btn-success">Logout</button></a>
     </div>
   </div>

@@ -4,7 +4,8 @@ include("navbar.php");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $user = $_POST["user"];
   $password = $_POST["password"];
-  $query = "SELECT * FROM user_accounts WHERE `name` = '$user' AND `password` = '$password'";
+  $hash = md5($password);
+  $query = "SELECT * FROM user_accounts WHERE `name` = '$user' AND `password` = '$hash'";
   $res = mysqli_query($con,$query);
   $num = mysqli_num_rows($res);
   if($num > 0){
@@ -53,12 +54,20 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+.div{
+  display: flex;
+  justify-content: center;
+}
+.div h3{
+  font-size: 60px;
+}
 </style>
 </head>
 <body>
 
+<div class="div">
 <h3>Login Form</h3>
-
+</div>
 <div class="container">
   <form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
     <label for="fname">Username</label>
