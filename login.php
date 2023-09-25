@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $user = $_POST["user"];
   $password = $_POST["password"];
   $hash = md5($password);
-  $query = "SELECT * FROM user_accounts WHERE `name` = '$user' AND `password` = '$hash'";
+  $query = "SELECT * FROM user_accounts WHERE `name` = '$user' AND `password` = '$password'";
   $res = mysqli_query($con,$query);
   $num = mysqli_num_rows($res);
   if($num > 0){

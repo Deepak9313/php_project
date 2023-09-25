@@ -1,12 +1,12 @@
 <?php
- require('connection_inc.php');
+ require('../api/connection.php');
  require('function_inc.php');
  $msg='';
  if(isset($_POST['submit']))
  {
    $username=get_safe_value($con,$_POST['username']);
    $password=get_safe_value($con,$_POST['password']);
-   $sqli="select * from `admin_users` where `username`='$username' and `password`='$password'";
+   $sqli="select * from `user_accounts` where `name`='$username' and `password`='$password'";
    $result=mysqli_query($con,$sqli);
    $num=mysqli_num_rows($result);
    if($num==1)

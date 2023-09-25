@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -18,17 +19,9 @@
 <body>
 
     <!-- HEADER -->
-    <nav>
-        <img src="logo.jpg" class="logob">
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">ABOUT US</a></li>
-            <li><a href="">CONTACT US</a></li>
-            <li><button onclick="login()">Login</button></li>
-        </ul>
-    </nav>
+    <?php include("header.php");?>
     <header class="header">
-        
+
         <!-- Intro -->
         <div class="intro">
             <!-- <h1>TRY OUT THESE Any PRODUCTS</h1>
@@ -298,7 +291,7 @@
             </div>
         </div>
     </section>
-<script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
