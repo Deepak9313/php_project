@@ -19,7 +19,7 @@
 <body>
 
     <!-- HEADER -->
-    <?php include("header.php");?>
+    <?php include("header.php"); ?>
     <header class="header">
 
         <!-- Intro -->
@@ -153,7 +153,7 @@
         <div class="h">
             <h1>Popular <span>Products</span></h1>
         </div>
-        <div class="ac-center box">
+        <div class="ac-center box "  id="section">
             <div class="ac">
                 <div class="img-cover">
                     <img src="mini-latherwallet.jpg" alt="" />
@@ -277,7 +277,7 @@
 
         <div class="foot">
             <ul>
-                <li><a href="">HOME</a></li>
+                <li><a href="" id="btn">HOME</a></li>
                 <li><a href="">ABOUT US</a></li>
                 <li><a href="">CONTACT US</a></li>
 
@@ -291,6 +291,37 @@
             </div>
         </div>
     </section>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn").on("mouseover", function() {
+                alert("button clicked");
+            });
+            $.ajax({
+                url: "api/api-products.php",
+                method: "GET",
+                success: function(data) {
+                    $("#section").append( 
+                        `<div class = "ac" >
+                        <div class = "img-cover" >
+                        <img src = php_project/`+data[2][7]+`
+                        alt = "" />
+                        </div> <p> `+data[0][1]+` </p>
+                        <div class = "rating" >
+                        <i class = "bx bxs-star" > </i> 
+                        <i class = "bx bxs-star" > </i> 
+                        <i class = "bx bxs-star" > </i> 
+                        <i class = "bx bxs-star" > </i> 
+                        <i class = "bx bx-star" > </i> 
+                        </div> 
+                        <div class = "price" >Rs.`+ data[0][4] +`</div> 
+                        </div>`
+                    );
+                    console.log(data);
+                }
+            })
+        })
+    </script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 
